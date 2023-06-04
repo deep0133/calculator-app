@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet" />
+
+    <title>Frontend Mentor | Calculator app</title>
+  </head>
+  <body>
+    <section class="calculator-container">
+      <div class="title-toggle_btn">
+        <h1>calc</h1>
+        <div class="toggle-section">
+          <span>THEME</span>
+          <div class="toggle-area">
+            <p class="p-1">3</p>
+            <p class="p-2">2</p>
+            <p class="p-3">1</p>
+            <div onclick="togBtnHandler()" id="tog-btn" class="tog-btn"></div>
+          </div>
+        </div>
+      </div>
+      <div class="calculator">
+        <div class="output-box">
+          <input
+            type="text"
+            value=""
+            placeholder="0.00"
+            readonly
+            class="output"
+            name="output"
+            id="output" />
+        </div>
+        <div class="keypad-container">
+          <div class="keys key-1" onclick="onkeyPress(7)">7</div>
+          <div class="keys key-2" onclick="onkeyPress(8)">8</div>
+          <div class="keys key-3" onclick="onkeyPress(9)">9</div>
+          <div class="keys key-4" onclick="delLastKey()">DEL</div>
+          <div class="keys key-5" onclick="onkeyPress(4)">4</div>
+          <div class="keys key-6" onclick="onkeyPress(5)">5</div>
+          <div class="keys key-7" onclick="onkeyPress(6)">6</div>
+          <div class="keys key-8" onclick="operator('+')">+</div>
+          <div class="keys key-9" onclick="onkeyPress(1)">1</div>
+          <div class="keys key-10" onclick="onkeyPress(2)">2</div>
+          <div class="keys key-11" onclick="onkeyPress(3)">3</div>
+          <div class="keys key-12" onclick="operator('-')">-</div>
+          <div class="keys key-13" onclick="onkeyPress('.')">.</div>
+          <div class="keys key-14" onclick="onkeyPress(0)">0</div>
+          <div class="keys key-15" onclick="operator('/')">/</div>
+          <div class="keys key-16" onclick="operator('*')">x</div>
+          <div class="keys key-17" onclick="reset()">RESET</div>
+          <div class="keys key-18" onclick="calculateResult()">=</div>
+        </div>
+      </div>
+    </section>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,190 @@
+:root {
+  /* Background colors */
+  --theme_background: hsl(222, 26%, 31%);
+  --theme_background_tog_keyPad: hsl(223, 31%, 20%);
+  --theme_background_screen: hsl(224, 36%, 15%);
+  /* Keys colors */
+  --theme_keys_background_hov: hsl(0, 24%, 93%);
+  --theme_keys_background_del_rst: hsl(225, 21%, 49%);
+  --theme_keys_background_del_rst_hov: hsl(224, 27%, 64%);
+  --theme_keys_shadow_del_rst: hsl(224, 28%, 35%);
+  --theme_keys_background_eql_tog: hsl(6, 63%, 50%);
+  --theme_keys_background_eql_hov: hsl(6.46deg 92.94% 66.67%);
+  --theme_keys_eql_shadow: hsl(6, 70%, 34%);
+  --theme_keys_num_background: hsl(30, 25%, 89%);
+  --theme_keys_num_shadow: hsl(28, 16%, 65%);
+  /*Text colors */
+  --theme_text_num: hsl(221, 14%, 31%);
+  --theme_text_num_eql: hsl(0, 0%, 100%);
+  --theme_text_del_rst: hsl(0, 0%, 100%);
+  --theme_text_ans: hsl(0, 0%, 100%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.calculator-container {
+  background-color: var(--theme_background);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  font-family: "League Spartan", sans-serif;
+  position: relative;
+}
+.title-toggle_btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-top: 40px !important;
+  color: var(--theme_text_ans);
+}
+.title-toggle_btn h1 {
+  font-size: 32px;
+}
+.title-toggle_btn .toggle-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.title-toggle_btn .toggle-section .toggle-area {
+  width: 70px;
+  background-color: var(--theme_background_tog_keyPad);
+  border-radius: 20px;
+  padding: 2px;
+}
+.title-toggle_btn .toggle-section .toggle-area p {
+  position: absolute;
+  top: -20px;
+}
+.toggle-area .p-1 {
+  right: 10px !important;
+}
+.toggle-area .p-2 {
+  right: 30px !important;
+}
+.toggle-area .p-3 {
+  right: 55px !important;
+}
+
+.title-toggle_btn .toggle-section .toggle-area .tog-btn {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  margin: 2px;
+  /* translate: 45px; */
+  cursor: pointer;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.tog-btn-translate-23 {
+  translate: 23px;
+}
+
+.tog-btn-translate-45 {
+  translate: 45px;
+}
+
+.calculator {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-size: 32px;
+}
+
+.keypad-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Three columns of equal width */
+  grid-gap: 15px;
+  padding: 20px;
+  background-color: var(--theme_background_tog_keyPad);
+  border-radius: 10px;
+}
+
+.calculator .output-box {
+  background-color: var(--theme_background_screen);
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--theme_text_ans);
+}
+
+.calculator .output-box .output {
+  background-color: inherit;
+  outline: none;
+  width: 100%;
+  overflow-x: auto;
+  text-align: end;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-family: "League Spartan", sans-serif;
+  font-size: 32px;
+  border-radius: 10px;
+  color: var(--theme_text_ans);
+}
+
+.keys {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: var(--theme_text_num);
+  background-color: var(--theme_keys_num_background);
+  box-shadow: 0px 4px 1px var(--theme_keys_num_shadow);
+  cursor: pointer;
+}
+.keys:hover {
+  background-color: var(--theme_keys_background_hov) !important;
+}
+
+.key-17 {
+  /* grid-column: (start/span end ) OR (start/end) */
+  grid-column: 1 / 3;
+}
+.key-18 {
+  grid-column: 3/5;
+  color: var(--theme_text_num_eql) !important;
+  box-shadow: 0px 4px 1px var(--theme_keys_eql_shadow);
+}
+
+.key-4,
+.key-17 {
+  color: var(--theme_text_del_rst) !important;
+  background-color: var(--theme_keys_background_del_rst) !important;
+  box-shadow: 0px 4px 1px var(--theme_keys_shadow_del_rst) !important;
+}
+.key-4:hover,
+.key-17:hover {
+  background-color: var(--theme_keys_background_del_rst_hov) !important;
+}
+.tog-btn,
+.key-18 {
+  background-color: var(--theme_keys_background_eql_tog) !important;
+}
+.tog-btn:hover,
+.key-18:hover {
+  background-color: var(--theme_keys_background_eql_hov) !important;
+}
+
+@media (min-width: 450px) {
+  .title-toggle_btn {
+    width: 450px;
+  }
+}
+@media (min-width: 500px) {
+  .calculator-container {
+    justify-content: center;
+  }
+}
